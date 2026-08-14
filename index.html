@@ -1,457 +1,457 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Recover with me | D/noury</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root {
---bg:#f7f3ee;
---bg-soft:#eef6f2;
---card:rgba(255,255,255,.78);
---text:#203331;
---muted:#63726f;
---primary:#4f8b7e;
---primary-dark:#2e6056;
---accent:#b8a4da;
---accent-soft:#efe6fb;
---sand:#eadbca;
---line:rgba(79,139,126,.12);
---shadow:0 20px 60px rgba(31,54,50,.12);
---radius:26px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;
-font-family:"Cairo", system-ui, sans-serif;
-color:var(--text);
-background:
-radial-gradient(circle at 10% 12%, #e5f3ec 0, transparent 26%),
-radial-gradient(circle at 88% 10%, #f0e8fb 0, transparent 24%),
-radial-gradient(circle at 75% 88%, #f8ebdf 0, transparent 24%),
-linear-gradient(180deg, #faf7f2 0%, var(--bg) 42%, var(--bg-soft) 100%);
-line-height:1.85;
-transition: background 0.3s, color 0.3s;
-}
-a{text-decoration:none}
-.container{width:min(1140px, calc(100% - 32px)); margin:auto}
-.nav{
-position:sticky; top:0; z-index:50;
-backdrop-filter:blur(14px);
-background:rgba(250,247,242,.72);
-border-bottom:1px solid var(--line);
-transition: background 0.3s;
-}
-.nav-inner{
-display:flex; align-items:center; justify-content:space-between; gap:16px;
-padding:14px 0;
-flex-wrap:wrap;
-}
-.brand{display:flex; flex-direction:column; line-height:1.15}
-.brand strong{font-size:1.15rem; font-weight:900; letter-spacing:.2px}
-.brand span{font-size:.88rem; color:var(--muted); font-weight:700}
-.brand strong em{font-style:normal; color:var(--primary)}
-.nav-links{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
-.nav-links a{color:var(--muted); font-weight:700; font-size:.95rem}
-.btn{
-display:inline-flex; align-items:center; justify-content:center; gap:10px;
-padding:14px 24px; border-radius:999px; font-weight:800; border:none; cursor:pointer;
-transition:.25s ease; white-space:nowrap;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{
-background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-color:#fff; box-shadow:0 14px 30px rgba(79,139,126,.28);
-}
-.btn-secondary{
-background:rgba(255,255,255,.82);
-color:var(--primary-dark);
-border:1px solid var(--line);
-}
-.hero{padding:72px 0 40px}
-.hero-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:28px; align-items:center}
-.badge{
-display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
-border-radius:999px; background:rgba(255,255,255,.72);
-border:1px solid var(--line); color:var(--primary-dark); font-weight:800;
-box-shadow:0 8px 20px rgba(0,0,0,.04);
-}
-h1{
-margin:18px 0 14px; line-height:1.12;
-font-size:clamp(2.2rem, 5vw, 4.7rem);
-}
-.hero p{
-margin:0 0 22px; color:var(--muted); font-size:1.07rem;
-max-width:640px;
-}
-.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:14px}
-.mini-note{font-size:.95rem; color:var(--muted); font-weight:700}
-.hero-card{
-position:relative; min-height:470px; overflow:hidden; border-radius:34px;
-border:1px solid var(--line);
-background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.56));
-box-shadow:var(--shadow); padding:28px;
-}
-.orb{position:absolute; border-radius:50%; opacity:.95; filter:blur(2px)}
-.orb.one{width:190px; height:190px; top:24px; right:-28px; background:#ece1fb}
-.orb.two{width:220px; height:220px; bottom:-45px; left:22%; background:#dff0e8}
-.orb.three{width:150px; height:150px; top:72px; left:-24px; background:#f4e4d6}
-.hero-panel{
-position:relative; z-index:1; margin-top:118px;
-background:rgba(255,255,255,.76); border:1px solid var(--line);
-border-radius:24px; padding:24px;
-}
-.hero-panel h3{margin:0 0 10px; font-size:1.38rem}
-.hero-panel p{margin:0; font-size:1rem}
-.section{padding:32px 0 10px}
-.section-head{max-width:720px; margin-bottom:22px}
-.section-title{font-size:2rem; margin:0 0 8px}
-.section-sub{margin:0; color:var(--muted)}
-.grid-2,.grid-3,.grid-4{display:grid; gap:18px}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-4{grid-template-columns:repeat(4,1fr)}
-.card{
-background:var(--card); backdrop-filter:blur(10px);
-border:1px solid var(--line); border-radius:var(--radius);
-padding:22px; box-shadow:var(--shadow);
-transition: background 0.3s;
-}
-.icon{
-width:52px; height:52px; display:grid; place-items:center;
-border-radius:18px; margin-bottom:14px; font-size:1.35rem;
-background:linear-gradient(135deg, #e2f2eb, #f2ebfb);
-}
-.card h3{margin:0 0 8px; font-size:1.14rem}
-.card p{margin:0; color:var(--muted)}
-.profile-box{display:grid; gap:14px}
-.profile-name{
-display:inline-flex; align-items:center; gap:10px; width:max-content;
-padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line);
-font-weight:800; color:var(--primary-dark)
-}
-.quote-box{
-padding:18px 20px; border-radius:22px; background:linear-gradient(135deg,#f6f1ff,#eef8f4);
-border:1px solid rgba(184,164,218,.25); color:#32403e; font-weight:700
-}
-.steps .step-number{
-width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
-background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff;
-font-weight:900; margin-bottom:14px;
-}
-.benefits{display:grid; gap:14px}
-.benefit{
-display:flex; gap:14px; align-items:flex-start;
-background:rgba(255,255,255,.78); border:1px solid var(--line);
-border-radius:20px; padding:16px 18px;
-}
-.check{
-width:36px; height:36px; min-width:36px; border-radius:50%;
-display:grid; place-items:center; background:#e1f1ea; color:var(--primary-dark); font-weight:900;
-}
-.testimonial small{display:block; margin-top:10px; color:var(--primary-dark); font-weight:800}
-.faq details{
-background:rgba(255,255,255,.78); border:1px solid var(--line); border-radius:18px;
-padding:18px 20px;
-}
-.faq details + details{margin-top:12px}
-.faq summary{cursor:pointer; font-weight:800}
-.faq p{margin:12px 0 0; color:var(--muted)}
-.cta{
-position:relative; overflow:hidden; padding:34px; border-radius:34px;
-background:linear-gradient(135deg, rgba(79,139,126,.98), rgba(63,100,140,.94));
-color:#fff; box-shadow:var(--shadow);
-}
-.cta::before,.cta::after{
-content:""; position:absolute; border-radius:50%; background:rgba(255,255,255,.08)
-}
-.cta::before{width:220px; height:220px; top:-90px; left:-70px}
-.cta::after{width:190px; height:190px; bottom:-70px; right:-50px}
-.cta *{position:relative; z-index:1}
-footer{padding:30px 0 44px; text-align:center; color:var(--muted)}
-.floating-wa{
-position:fixed; left:18px; bottom:18px; z-index:80;
-width:62px; height:62px; display:grid; place-items:center;
-border-radius:50%; background:#25D366; color:#fff; font-size:1.75rem;
-box-shadow:0 16px 34px rgba(37,211,102,.3);
-transition: 0.3s;
-z-index: 999;
-}
-.floating-wa:hover{transform:scale(1.1)}
-.muted{color:var(--muted)}
-.tiny{font-size:.94rem}
-.highlight{color:var(--primary)}
-@media (max-width: 920px){
-.hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-.nav-inner{flex-direction:column; align-items:flex-start}
-.hero{padding-top:42px}
-.hero-card{min-height:auto}
-.hero-panel{margin-top:150px}
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recover with me | D/noury</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#f7f3ee;
+      --bg-soft:#eef6f2;
+      --card:rgba(255,255,255,.78);
+      --text:#203331;
+      --muted:#63726f;
+      --primary:#4f8b7e;
+      --primary-dark:#2e6056;
+      --accent:#b8a4da;
+      --accent-soft:#efe6fb;
+      --sand:#eadbca;
+      --line:rgba(79,139,126,.12);
+      --shadow:0 20px 60px rgba(31,54,50,.12);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Cairo", system-ui, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 12%, #e5f3ec 0, transparent 26%),
+        radial-gradient(circle at 88% 10%, #f0e8fb 0, transparent 24%),
+        radial-gradient(circle at 75% 88%, #f8ebdf 0, transparent 24%),
+        linear-gradient(180deg, #faf7f2 0%, var(--bg) 42%, var(--bg-soft) 100%);
+      line-height:1.85;
+      transition: background 0.3s, color 0.3s;
+    }
+    a{text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:auto}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(250,247,242,.72);
+      border-bottom:1px solid var(--line);
+      transition: background 0.3s;
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:14px 0;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex; flex-direction:column; line-height:1.15}
+    .brand strong{font-size:1.15rem; font-weight:900; letter-spacing:.2px}
+    .brand span{font-size:.88rem; color:var(--muted); font-weight:700}
+    .brand strong em{font-style:normal; color:var(--primary)}
+    .nav-links{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
+    .nav-links a{color:var(--muted); font-weight:700; font-size:.95rem}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 24px; border-radius:999px; font-weight:800; border:none; cursor:pointer;
+      transition:.25s ease; white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff; box-shadow:0 14px 30px rgba(79,139,126,.28);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.82);
+      color:var(--primary-dark);
+      border:1px solid var(--line);
+    }
+    .hero{padding:72px 0 40px}
+    .hero-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:28px; align-items:center}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+      border-radius:999px; background:rgba(255,255,255,.72);
+      border:1px solid var(--line); color:var(--primary-dark); font-weight:800;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    }
+    h1{
+      margin:18px 0 14px; line-height:1.12;
+      font-size:clamp(2.2rem, 5vw, 4.7rem);
+    }
+    .hero p{
+      margin:0 0 22px; color:var(--muted); font-size:1.07rem;
+      max-width:640px;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:14px}
+    .mini-note{font-size:.95rem; color:var(--muted); font-weight:700}
+    .hero-card{
+      position:relative; min-height:470px; overflow:hidden; border-radius:34px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.56));
+      box-shadow:var(--shadow); padding:28px;
+    }
+    .orb{position:absolute; border-radius:50%; opacity:.95; filter:blur(2px)}
+    .orb.one{width:190px; height:190px; top:24px; right:-28px; background:#ece1fb}
+    .orb.two{width:220px; height:220px; bottom:-45px; left:22%; background:#dff0e8}
+    .orb.three{width:150px; height:150px; top:72px; left:-24px; background:#f4e4d6}
+    .hero-panel{
+      position:relative; z-index:1; margin-top:118px;
+      background:rgba(255,255,255,.76); border:1px solid var(--line);
+      border-radius:24px; padding:24px;
+    }
+    .hero-panel h3{margin:0 0 10px; font-size:1.38rem}
+    .hero-panel p{margin:0; font-size:1rem}
+    .section{padding:32px 0 10px}
+    .section-head{max-width:720px; margin-bottom:22px}
+    .section-title{font-size:2rem; margin:0 0 8px}
+    .section-sub{margin:0; color:var(--muted)}
+    .grid-2,.grid-3,.grid-4{display:grid; gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{
+      background:var(--card); backdrop-filter:blur(10px);
+      border:1px solid var(--line); border-radius:var(--radius);
+      padding:22px; box-shadow:var(--shadow);
+      transition: background 0.3s;
+    }
+    .icon{
+      width:52px; height:52px; display:grid; place-items:center;
+      border-radius:18px; margin-bottom:14px; font-size:1.35rem;
+      background:linear-gradient(135deg, #e2f2eb, #f2ebfb);
+    }
+    .card h3{margin:0 0 8px; font-size:1.14rem}
+    .card p{margin:0; color:var(--muted)}
+    .profile-box{display:grid; gap:14px}
+    .profile-name{
+      display:inline-flex; align-items:center; gap:10px; width:max-content;
+      padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line);
+      font-weight:800; color:var(--primary-dark)
+    }
+    .quote-box{
+      padding:18px 20px; border-radius:22px; background:linear-gradient(135deg,#f6f1ff,#eef8f4);
+      border:1px solid rgba(184,164,218,.25); color:#32403e; font-weight:700
+    }
+    .steps .step-number{
+      width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
+      background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff;
+      font-weight:900; margin-bottom:14px;
+    }
+    .benefits{display:grid; gap:14px}
+    .benefit{
+      display:flex; gap:14px; align-items:flex-start;
+      background:rgba(255,255,255,.78); border:1px solid var(--line);
+      border-radius:20px; padding:16px 18px;
+    }
+    .check{
+      width:36px; height:36px; min-width:36px; border-radius:50%;
+      display:grid; place-items:center; background:#e1f1ea; color:var(--primary-dark); font-weight:900;
+    }
+    .testimonial small{display:block; margin-top:10px; color:var(--primary-dark); font-weight:800}
+    .faq details{
+      background:rgba(255,255,255,.78); border:1px solid var(--line); border-radius:18px;
+      padding:18px 20px;
+    }
+    .faq details + details{margin-top:12px}
+    .faq summary{cursor:pointer; font-weight:800}
+    .faq p{margin:12px 0 0; color:var(--muted)}
+    .cta{
+      position:relative; overflow:hidden; padding:34px; border-radius:34px;
+      background:linear-gradient(135deg, rgba(79,139,126,.98), rgba(63,100,140,.94));
+      color:#fff; box-shadow:var(--shadow);
+    }
+    .cta::before,.cta::after{
+      content:""; position:absolute; border-radius:50%; background:rgba(255,255,255,.08)
+    }
+    .cta::before{width:220px; height:220px; top:-90px; left:-70px}
+    .cta::after{width:190px; height:190px; bottom:-70px; right:-50px}
+    .cta *{position:relative; z-index:1}
+    footer{padding:30px 0 44px; text-align:center; color:var(--muted)}
+    .floating-wa{
+      position:fixed; left:18px; bottom:18px; z-index:80;
+      width:62px; height:62px; display:grid; place-items:center;
+      border-radius:50%; background:#25D366; color:#fff; font-size:1.75rem;
+      box-shadow:0 16px 34px rgba(37,211,102,.3);
+      transition: 0.3s;
+      z-index: 999;
+    }
+    .floating-wa:hover{transform:scale(1.1)}
+    .muted{color:var(--muted)}
+    .tiny{font-size:.94rem}
+    .highlight{color:var(--primary)}
+    @media (max-width: 920px){
+      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .nav-inner{flex-direction:column; align-items:flex-start}
+      .hero{padding-top:42px}
+      .hero-card{min-height:auto}
+      .hero-panel{margin-top:150px}
+    }
 
-/* ===== إضافات الأفكار الجديدة ===== */
-.mood-btn { transition: all 0.3s ease; }
-.mood-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-#randomQuote { transition: opacity 0.6s ease; min-height: 80px; display: flex; align-items: center; justify-content: center; }
-#breathCircle { transition: all 1.2s ease; }
-#countdown { font-family: 'Cairo', sans-serif; letter-spacing: 2px; }
+    /* ===== إضافات الأفكار الجديدة ===== */
+    .mood-btn { transition: all 0.3s ease; }
+    .mood-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    #randomQuote { transition: opacity 0.6s ease; min-height: 80px; display: flex; align-items: center; justify-content: center; }
+    #breathCircle { transition: all 1.2s ease; }
+    #countdown { font-family: 'Cairo', sans-serif; letter-spacing: 2px; }
 
-.dark-mode {
-background: #1a1a2e;
-color: #e0e0e0;
-}
-.dark-mode .nav { background: rgba(26, 26, 46, 0.9); border-bottom-color: rgba(255,255,255,0.1); }
-.dark-mode .card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border-color: rgba(255,255,255,0.1); }
-.dark-mode .hero-card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
-.dark-mode .hero-panel { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
-.dark-mode .badge { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); color: #e0e0e0; }
-.dark-mode .btn-secondary { background: rgba(255,255,255,0.08); color: #e0e0e0; border-color: rgba(255,255,255,0.15); }
-.dark-mode .profile-name { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); color: #e0e0e0; }
-.dark-mode .benefit { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
-.dark-mode .faq details { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
-.dark-mode .quote-box { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); color: #e0e0e0; }
-.dark-mode .check { background: rgba(255,255,255,0.12); color: #e0e0e0; }
-.dark-mode #moodMessage { background: rgba(255,255,255,0.08); color: #e0e0e0; }
-.dark-mode #countdown { background: rgba(255,255,255,0.08); color: #e0e0e0; }
-.dark-mode #randomTestimonial .container { background: rgba(255,255,255,0.06); }
+    .dark-mode {
+      background: #1a1a2e;
+      color: #e0e0e0;
+    }
+    .dark-mode .nav { background: rgba(26, 26, 46, 0.9); border-bottom-color: rgba(255,255,255,0.1); }
+    .dark-mode .card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border-color: rgba(255,255,255,0.1); }
+    .dark-mode .hero-card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
+    .dark-mode .hero-panel { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
+    .dark-mode .badge { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); color: #e0e0e0; }
+    .dark-mode .btn-secondary { background: rgba(255,255,255,0.08); color: #e0e0e0; border-color: rgba(255,255,255,0.15); }
+    .dark-mode .profile-name { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); color: #e0e0e0; }
+    .dark-mode .benefit { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
+    .dark-mode .faq details { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
+    .dark-mode .quote-box { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); color: #e0e0e0; }
+    .dark-mode .check { background: rgba(255,255,255,0.12); color: #e0e0e0; }
+    .dark-mode #moodMessage { background: rgba(255,255,255,0.08); color: #e0e0e0; }
+    .dark-mode #countdown { background: rgba(255,255,255,0.08); color: #e0e0e0; }
+    .dark-mode #randomTestimonial .container { background: rgba(255,255,255,0.06); }
 
-.contact-form input, .contact-form textarea {
-width: 100%;
-padding: 14px;
-border: 1px solid var(--line);
-border-radius: 16px;
-font-family: 'Cairo', sans-serif;
-font-size: 1rem;
-margin-bottom: 12px;
-background: rgba(255,255,255,0.7);
-transition: 0.3s;
-}
-.contact-form input:focus, .contact-form textarea:focus {
-outline: none;
-border-color: var(--primary);
-box-shadow: 0 0 0 3px rgba(79,139,126,0.2);
-}
-.contact-form button {
-width: 100%;
-padding: 16px;
-border: none;
-border-radius: 50px;
-background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-color: white;
-font-weight: 800;
-font-size: 1.1rem;
-cursor: pointer;
-transition: 0.3s;
-}
-.contact-form button:hover {
-transform: scale(1.02);
-box-shadow: 0 8px 25px rgba(79,139,126,0.3);
-}
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.7);
+      transition: 0.3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79,139,126,0.2);
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(79,139,126,0.3);
+    }
 
-.stress-slider { width: 100%; accent-color: var(--primary); }
-.stress-label { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--muted); }
+    .stress-slider { width: 100%; accent-color: var(--primary); }
+    .stress-label { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--muted); }
 
-.whatsapp-chat {
-position: fixed;
-bottom: 90px;
-left: 18px;
-z-index: 90;
-background: white;
-border-radius: 20px;
-padding: 14px 18px;
-box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-border: 1px solid var(--line);
-display: flex;
-align-items: center;
-gap: 10px;
-font-weight: 700;
-color: var(--primary-dark);
-transition: 0.3s;
-cursor: pointer;
-}
-.whatsapp-chat:hover { transform: scale(1.05); }
+    .whatsapp-chat {
+      position: fixed;
+      bottom: 90px;
+      left: 18px;
+      z-index: 90;
+      background: white;
+      border-radius: 20px;
+      padding: 14px 18px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .whatsapp-chat:hover { transform: scale(1.05); }
 
-.dark-toggle {
-background: none;
-border: none;
-font-size: 1.5rem;
-cursor: pointer;
-color: var(--muted);
-transition: 0.3s;
-padding: 4px 8px;
-}
-.dark-toggle:hover { transform: rotate(20deg); }
-</style>
+    .dark-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--muted);
+      transition: 0.3s;
+      padding: 4px 8px;
+    }
+    .dark-toggle:hover { transform: rotate(20deg); }
+  </style>
 </head>
 <body>
 
 <!-- نافذة الترحيب -->
 <div id="welcomePopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
-<div style="background: white; max-width: 400px; padding: 30px; border-radius: 30px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.3); margin: 20px;">
-<h2 style="color: var(--primary);">🌸 أهلاً بكِ في مساحة التعافي</h2>
-<p style="color: var(--muted); font-size: 1.1rem;">كيف تشعرين اليوم؟ أنا هنا معكِ 🤍</p>
-<button onclick="closePopup()" style="background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 10px;">أبدأ الرحلة 🧘</button>
-</div>
+  <div style="background: white; max-width: 400px; padding: 30px; border-radius: 30px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.3); margin: 20px;">
+    <h2 style="color: var(--primary);">🌸 أهلاً بكِ في مساحة التعافي</h2>
+    <p style="color: var(--muted); font-size: 1.1rem;">كيف تشعرين اليوم؟ أنا هنا معكِ 🤍</p>
+    <button onclick="closePopup()" style="background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 10px;">أبدأ الرحلة 🧘</button>
+  </div>
 </div>
 
 <!-- نافذة التنفس -->
 <div id="breathOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
-<div style="background: white; max-width: 400px; padding: 40px; border-radius: 50px; text-align: center; margin: 20px;">
-<h2 style="color: var(--primary);">🌬️ خذ شهيقاً عميقاً</h2>
-<div id="breathCircle" style="width: 120px; height: 120px; margin: 20px auto; border-radius: 50%; background: var(--primary); transition: all 1s ease; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 1.2rem;">شهيق</div>
-<button onclick="closeBreath()" style="background: #e74c3c; color: white; border: none; padding: 10px 30px; border-radius: 40px; font-weight: bold; cursor: pointer; margin-top: 15px;">إغلاق</button>
-</div>
+  <div style="background: white; max-width: 400px; padding: 40px; border-radius: 50px; text-align: center; margin: 20px;">
+    <h2 style="color: var(--primary);">🌬️ خذ شهيقاً عميقاً</h2>
+    <div id="breathCircle" style="width: 120px; height: 120px; margin: 20px auto; border-radius: 50%; background: var(--primary); transition: all 1s ease; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 1.2rem;">شهيق</div>
+    <button onclick="closeBreath()" style="background: #e74c3c; color: white; border: none; padding: 10px 30px; border-radius: 40px; font-weight: bold; cursor: pointer; margin-top: 15px;">إغلاق</button>
+  </div>
 </div>
 
 <!-- شات واتساب مصغر -->
 <a href="https://wa.me/201104684025" target="_blank" rel="noopener" class="whatsapp-chat">💬 تواصلي معي الآن</a>
 
 <nav class="nav">
-<div class="container nav-inner">
-<div class="brand">
-<strong>Recover <em>with me</em></strong>
-<span>with D/noury</span>
-</div>
-<div class="nav-links">
-<a href="#about">من أنا</a>
-<a href="#services">الخدمات</a>
-<a href="#steps">كيف تبدأ</a>
-<a href="#faq">الأسئلة الشائعة</a>
-<button onclick="toggleDarkMode()" class="dark-toggle" aria-label="الوضع الليلي">🌙</button>
-<a class="btn btn-primary" href="https://wa.me/201104684025" target="_blank" rel="noopener">راسلني على واتساب</a>
-</div>
-</div>
+  <div class="container nav-inner">
+    <div class="brand">
+      <strong>Recover <em>with me</em></strong>
+      <span>with D/noury</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">من أنا</a>
+      <a href="#services">الخدمات</a>
+      <a href="#steps">كيف تبدأ</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <button onclick="toggleDarkMode()" class="dark-toggle" aria-label="الوضع الليلي">🌙</button>
+      <a class="btn btn-primary" href="https://wa.me/201104684025" target="_blank" rel="noopener">راسلني على واتساب</a>
+    </div>
+  </div>
 </nav>
 
 <header class="hero">
-<div class="container hero-grid">
-<div>
-<div class="badge">مساحة هادئة للتعافي والاسترخاء والعناية بالجسد</div>
-<h1>استعيدي الراحة والتوازن مع <span class="highlight">Recover with me</span></h1>
-<p>مع <strong>D/noury</strong> ستجدين تجربة مريحة تساعدك على استعادة الهدوء، الشعور بالاسترخاء، والتواصل مع جسدك بصورة أعمق. هنا تبدأ رحلة ألطف نحو الراحة، فقط بخطوة بسيطة ورسالة واحدة على واتساب.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="https://wa.me/201104684025" target="_blank" rel="noopener">احجزي الآن عبر واتساب</a>
-<a class="btn btn-secondary" href="#services">تعرّفي على الخدمات</a>
-</div>
-<div class="mini-note">للحجز والاستفسار: 01104684025</div>
-</div>
-<div class="hero-card">
-<div class="orb one"></div>
-<div class="orb two"></div>
-<div class="orb three"></div>
-<div class="hero-panel">
-<h3>رحلة استرخاء تبدأ برسالة</h3>
-<p>هنا، عزيزتي، ستجدين التعافي والاسترخاء لجسدك معي. فقط أرسلي لي رسالة، وسأكون معك في بداية تجربة مريحة، هادئة، ومصممة لتمنحك شعوراً أعمق بالراحة والاهتمام.</p>
-</div>
-</div>
-</div>
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">مساحة هادئة للتعافي والاسترخاء والعناية بالجسد</div>
+      <h1>استعيدي الراحة والتوازن مع <span class="highlight">Recover with me</span></h1>
+      <p>مع <strong>D/noury</strong> ستجدين تجربة مريحة تساعدك على استعادة الهدوء، الشعور بالاسترخاء، والتواصل مع جسدك بصورة أعمق. هنا تبدأ رحلة ألطف نحو الراحة، فقط بخطوة بسيطة ورسالة واحدة على واتساب.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/201104684025" target="_blank" rel="noopener">احجزي الآن عبر واتساب</a>
+        <a class="btn btn-secondary" href="#services">تعرّفي على الخدمات</a>
+      </div>
+      <div class="mini-note">للحجز والاستفسار: 01104684025</div>
+    </div>
+    <div class="hero-card">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <div class="orb three"></div>
+      <div class="hero-panel">
+        <h3>رحلة استرخاء تبدأ برسالة</h3>
+        <p>هنا، عزيزتي، ستجدين التعافي والاسترخاء لجسدك معي. فقط أرسلي لي رسالة، وسأكون معك في بداية تجربة مريحة، هادئة، ومصممة لتمنحك شعوراً أعمق بالراحة والاهتمام.</p>
+      </div>
+    </div>
+  </div>
 </header>
 
 <!-- زر التنفس معي -->
 <section class="section" style="padding-top: 0;">
-<div class="container" style="text-align: center;">
-<button onclick="openBreathExercise()" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; padding: 18px 40px; border-radius: 60px; font-weight: 900; font-size: 1.3rem; cursor: pointer; box-shadow: 0 12px 30px rgba(79,139,126,0.3); transition: all 0.3s ease;">
-🌬️ تنفس معي
-</button>
-<p style="color: var(--muted); margin-top: 8px; font-size: 0.95rem;">خذي دقيقة لتستعيدي هدوءك</p>
-</div>
+  <div class="container" style="text-align: center;">
+    <button onclick="openBreathExercise()" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; padding: 18px 40px; border-radius: 60px; font-weight: 900; font-size: 1.3rem; cursor: pointer; box-shadow: 0 12px 30px rgba(79,139,126,0.3); transition: all 0.3s ease;">
+      🌬️ تنفس معي
+    </button>
+    <p style="color: var(--muted); margin-top: 8px; font-size: 0.95rem;">خذي دقيقة لتستعيدي هدوءك</p>
+  </div>
 </section>
 
 <section class="section" id="about">
-<div class="container grid-2">
-<div class="profile-box">
-<div class="profile-name">D/noury</div>
-<div>
-<h2 class="section-title">عنّي</h2>
-<p class="section-sub">أقدّم تجربة علاجية/استرخائية ناعمة واحترافية، تركّز على الراحة، الهدوء، واستعادة الإحساس بالتوازن. هدفي أن تشعري بالاحتواء من اللحظة الأولى، وأن تحصلي على مساحة مخصصة لكِ، تساعدك على التخفف من التوتر والاهتمام بجسدك بطريقة مريحة وآمنة.</p>
-</div>
-<div class="quote-box">لأن العناية بالجسد ليست رفاهية، بل لحظة ضرورية لاستعادة الراحة والهدوء من الداخل.</div>
-</div>
-<div class="card">
-<div class="icon">🤍</div>
-<h3>أسلوب هادئ ولمسة احترافية</h3>
-<p>كل جلسة مصممة لتمنحك شعوراً بالراحة والخصوصية والاهتمام الحقيقي، مع أجواء مهدئة وتجربة تساعدك على الاسترخاء والتجدد.</p>
-</div>
-</div>
+  <div class="container grid-2">
+    <div class="profile-box">
+      <div class="profile-name">D/noury</div>
+      <div>
+        <h2 class="section-title">عنّي</h2>
+        <p class="section-sub">أقدّم تجربة علاجية/استرخائية ناعمة واحترافية، تركّز على الراحة، الهدوء، واستعادة الإحساس بالتوازن. هدفي أن تشعري بالاحتواء من اللحظة الأولى، وأن تحصلي على مساحة مخصصة لكِ، تساعدك على التخفف من التوتر والاهتمام بجسدك بطريقة مريحة وآمنة.</p>
+      </div>
+      <div class="quote-box">لأن العناية بالجسد ليست رفاهية، بل لحظة ضرورية لاستعادة الراحة والهدوء من الداخل.</div>
+    </div>
+    <div class="card">
+      <div class="icon">🤍</div>
+      <h3>أسلوب هادئ ولمسة احترافية</h3>
+      <p>كل جلسة مصممة لتمنحك شعوراً بالراحة والخصوصية والاهتمام الحقيقي، مع أجواء مهدئة وتجربة تساعدك على الاسترخاء والتجدد.</p>
+    </div>
+  </div>
 </section>
 
 <!-- خريطة المشاعر -->
 <section class="section" id="mood" style="background: #f4f9f7; border-radius: 30px; margin: 0 16px; padding: 20px;">
-<div class="container" style="text-align: center;">
-<h2 class="section-title">🌈 كيف تشعرين اليوم؟</h2>
-<p class="section-sub">اختاري مشاعرك لتحصلي على رسالة دعم مخصصة لكِ</p>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 20px 0;">
-<button onclick="showMoodMessage('سعيدة')" class="mood-btn" style="background: #f9e79f; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😊 سعيدة</button>
-<button onclick="showMoodMessage('حزينة')" class="mood-btn" style="background: #a9cce3; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😢 حزينة</button>
-<button onclick="showMoodMessage('قلقة')" class="mood-btn" style="background: #f5b7b1; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😰 قلقة</button>
-<button onclick="showMoodMessage('مرتاحة')" class="mood-btn" style="background: #a9dfbf; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😌 مرتاحة</button>
-<button onclick="showMoodMessage('متعب')" class="mood-btn" style="background: #d7bde2; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😴 متعب</button>
-</div>
-<div id="moodMessage" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-dark); background: white; padding: 16px 24px; border-radius: 30px; margin-top: 10px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 70px;">
-🌸 اختاري شعورك لتحصلي على رسالة
-</div>
-</div>
+  <div class="container" style="text-align: center;">
+    <h2 class="section-title">🌈 كيف تشعرين اليوم؟</h2>
+    <p class="section-sub">اختاري مشاعرك لتحصلي على رسالة دعم مخصصة لكِ</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 20px 0;">
+      <button onclick="showMoodMessage('سعيدة')" class="mood-btn" style="background: #f9e79f; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😊 سعيدة</button>
+      <button onclick="showMoodMessage('حزينة')" class="mood-btn" style="background: #a9cce3; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😢 حزينة</button>
+      <button onclick="showMoodMessage('قلقة')" class="mood-btn" style="background: #f5b7b1; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😰 قلقة</button>
+      <button onclick="showMoodMessage('مرتاحة')" class="mood-btn" style="background: #a9dfbf; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😌 مرتاحة</button>
+      <button onclick="showMoodMessage('متعب')" class="mood-btn" style="background: #d7bde2; border: none; padding: 12px 22px; border-radius: 40px; font-weight: bold; cursor: pointer; font-size: 1rem;">😴 متعب</button>
+    </div>
+    <div id="moodMessage" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-dark); background: white; padding: 16px 24px; border-radius: 30px; margin-top: 10px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 70px;">
+      🌸 اختاري شعورك لتحصلي على رسالة
+    </div>
+  </div>
 </section>
 
 <!-- مقياس التوتر -->
 <section class="section" style="background: #f9f5f0; border-radius: 30px; margin: 0 16px; padding: 20px;">
-<div class="container" style="text-align: center;">
-<h2 class="section-title">📊 ما مدى توترك اليوم؟</h2>
-<p class="section-sub">اسحب المؤشر واختار درجة توترك</p>
-<input type="range" min="1" max="10" value="5" class="stress-slider" id="stressSlider" oninput="updateStressMessage()">
-<div class="stress-label">
-<span>😌 هادئ</span>
-<span>😰 متوتر جداً</span>
-</div>
-<div id="stressMessage" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-dark); margin-top: 12px; background: white; padding: 12px 24px; border-radius: 30px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-🌿 درجة توترك: 5
-</div>
-</div>
+  <div class="container" style="text-align: center;">
+    <h2 class="section-title">📊 ما مدى توترك اليوم؟</h2>
+    <p class="section-sub">اسحب المؤشر واختار درجة توترك</p>
+    <input type="range" min="1" max="10" value="5" class="stress-slider" id="stressSlider" oninput="updateStressMessage()">
+    <div class="stress-label">
+      <span>😌 هادئ</span>
+      <span>😰 متوتر جداً</span>
+    </div>
+    <div id="stressMessage" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-dark); margin-top: 12px; background: white; padding: 12px 24px; border-radius: 30px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      🌿 درجة توترك: 5
+    </div>
+  </div>
 </section>
 
 <section class="section" id="services">
-<div class="container">
-<div class="section-head">
-<h2 class="section-title">الخدمات</h2>
-<p class="section-sub">خدمات مصممة لمن تبحث عن التعافي، الاسترخاء، وتخفيف التوتر الجسدي في أجواء مريحة وراقية.</p>
-</div>
-<div class="grid-4">
-<div class="card"><div class="icon">🌿</div><h3>استرخاء الجسد</h3><p>جلسات تساعد على تهدئة الجسد، تخفيف الشد، ومنحك إحساساً أعمق بالراحة.</p></div>
-<div class="card"><div class="icon">✨</div><h3>التعافي والانتعاش</h3><p>تجربة تمنحك شعوراً بالتجدد واستعادة الخفة والطاقة بعد الإرهاق اليومي.</p></div>
-<div class="card"><div class="icon">🕊️</div><h3>تهدئة التوتر</h3><p>مساندة الجسد على التخلص من آثار الضغط والتعب عبر جلسات مريحة ومنظمة.</p></div>
-<div class="card"><div class="icon">🌸</div><h3>عناية شخصية راقية</h3><p>جلسات خاصة تمنحك وقتاً لنفسك في مساحة تشعرك بالهدوء والاهتمام والراحة.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">الخدمات</h2>
+      <p class="section-sub">خدمات مصممة لمن تبحث عن التعافي، الاسترخاء، وتخفيف التوتر الجسدي في أجواء مريحة وراقية.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="icon">🌿</div><h3>استرخاء الجسد</h3><p>جلسات تساعد على تهدئة الجسد، تخفيف الشد، ومنحك إحساساً أعمق بالراحة.</p></div>
+      <div class="card"><div class="icon">✨</div><h3>التعافي والانتعاش</h3><p>تجربة تمنحك شعوراً بالتجدد واستعادة الخفة والطاقة بعد الإرهاق اليومي.</p></div>
+      <div class="card"><div class="icon">🕊️</div><h3>تهدئة التوتر</h3><p>مساندة الجسد على التخلص من آثار الضغط والتعب عبر جلسات مريحة ومنظمة.</p></div>
+      <div class="card"><div class="icon">🌸</div><h3>عناية شخصية راقية</h3><p>جلسات خاصة تمنحك وقتاً لنفسك في مساحة تشعرك بالهدوء والاهتمام والراحة.</p></div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="steps">
-<div class="container">
-<div class="section-head">
-<h2 class="section-title">كيف تبدأين</h2>
-<p class="section-sub">3 خطوات بسيطة لتبدئي تجربتك مع Recover with me.</p>
-</div>
-<div class="grid-3 steps">
-<div class="card"><div class="step-number">1</div><h3>أرسلي رسالة واتساب</h3><p>أخبريني بما تحتاجينه أو استفسري عن الجلسات المتاحة بكل سهولة.</p></div>
-<div class="card"><div class="step-number">2</div><h3>اختاري الوقت المناسب</h3><p>يتم تنسيق الحجز والموعد بما يناسبك ويمنحك تجربة سلسة ومريحة.</p></div>
-<div class="card"><div class="step-number">3</div><h3>ابدئي رحلة الراحة</h3><p>استمتعي بجلسة هادئة واحترافية تساعدك على الاسترخاء والتعافي والانتعاش.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">كيف تبدأين</h2>
+      <p class="section-sub">3 خطوات بسيطة لتبدئي تجربتك مع Recover with me.</p>
+    </div>
+    <div class="grid-3 steps">
+      <div class="card"><div class="step-number">1</div><h3>أرسلي رسالة واتساب</h3><p>أخبريني بما تحتاجينه أو استفسري عن الجلسات المتاحة بكل سهولة.</p></div>
+      <div class="card"><div class="step-number">2</div><h3>اختاري الوقت المناسب</h3><p>يتم تنسيق الحجز والموعد بما يناسبك ويمنحك تجربة سلسة ومريحة.</p></div>
+      <div class="card"><div class="step-number">3</div><h3>ابدئي رحلة الراحة</h3><p>استمتعي بجلسة هادئة واحترافية تساعدك على الاسترخاء والتعافي والانتعاش.</p></div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="container grid-2">
-<div>
-<div class="section-head">
-<h2 class="section-title">لماذا تختارين D/noury</h2>
-<p class="section-sub">لأن التجربة المريحة لا تعتمد فقط على الخدمة، بل على الإحساس بالأمان، الذوق، والاهتمام الحقيقي بالتفاصيل.</p>
-</div>
-</div>
-<div class="benefits">
-<div class="benefit"><div class="check">✓</div><div><strong>خصوصية وراحة</strong><br><span class="muted tiny">أجواء هادئة تمنحك إحساساً بالطمأنينة من أول لحظة.</span></div></div>
-<div class="benefit"><div class="check">✓</div><div><strong>تجربة شخصية</strong><br><span class="muted tiny">اهتمام خاص باحتياجك لتشعري بأن الجلسة صُممت من أجلك.</span></div></div>
-<div class="benefit"><div class="check">✓</div><div><strong>طابع احترافي راقٍ</strong><br><span class="muted tiny">أسلوب أنيق ومريح يوازن بين الجودة والدفء الإنساني.</span></div></div>
-<div class="benefit"><div class="check">✓</div><div><strong>سهولة التواصل</strong><br><span class="muted tiny">الحجز وال
+  <div class="container grid-2">
+    <div>
+      <div class="section-head">
+        <h2 class="section-title">لماذا تختارين D/noury</h2>
+        <p class="section-sub">لأن التجربة المريحة لا تعتمد فقط على الخدمة، بل على الإحساس بالأمان، الذوق، والاهتمام الحقيقي بالتفاصيل.</p>
+      </div>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><div class="check">✓</div><div><strong>خصوصية وراحة</strong><br><span class="muted tiny">أجواء هادئة تمنحك إحساساً بالطمأنينة من أول لحظة.</span></div></div>
+      <div class="benefit"><div class="check">✓</div><div><strong>تجربة شخصية</strong><br><span class="muted tiny">اهتمام خاص باحتياجك لتشعري بأن الجلسة صُممت من أجلك.</span></div></div>
+      <div class="benefit"><div class="check">✓</div><div><strong>طابع احترافي راقٍ</strong><br><span class="muted tiny">أسلوب أنيق ومريح يوازن بين الجودة والدفء الإنساني.</span></div></div>
+      <div class="benefit"><div class="check">✓</div><div><strong>سهولة التواصل</strong><br><span class="muted tiny">الحجز وال
